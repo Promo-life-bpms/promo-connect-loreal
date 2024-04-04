@@ -56,10 +56,6 @@
 
     </div>
 
-    <div class="flex justify-center items-center">
-        <a href="{{ asset('img/MEDIX.mp4') }}"  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"  style="z-index:30; position:absolute; margin-top:-160px;" target="__blank">ver video</a>
-    </div>
-
     <div class="container mx-auto max-w-7xl">
         <div class="w-full bg-primary">
             <div class="container mx-auto max-w-7xl py-1">
