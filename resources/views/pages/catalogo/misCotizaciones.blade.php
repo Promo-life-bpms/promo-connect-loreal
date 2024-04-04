@@ -102,7 +102,7 @@
                                 <form method="POST" action="{{ route('downloadPDF') }}">
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $quote->id }}">
-                                    <button type="submit" class="w-full bg-primary hover:bg-primary text-white font-bold p-2 rounded text-sm">
+                                    <button type="submit" class="w-full bg-blue-700 hover:bg-primary text-white font-bold p-2 rounded text-sm">
                                         Descargar cotizacion
                                     </button>
                                 </form>

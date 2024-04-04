@@ -4,9 +4,9 @@
 
 ---
 
-[BH Trademarket S.A. de C.V.](https://trademarket.com.mx/)
+[Promo Life S. de R.L. de C.V.](https://www.promolife.mx/)
 San Andrés Atoto 155A Naucalpan de Juárez, Méx. C.P. 53550  
-Tel. +52(55) 6806 4616 
+Tel. +52(55) 62690017
 
 Fecha: **{{ $date }}**
 
