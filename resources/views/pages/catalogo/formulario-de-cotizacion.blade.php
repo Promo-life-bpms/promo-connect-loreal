@@ -206,7 +206,7 @@
                                     <div class="grid grid-cols-3 gap-4">
                                         <select id="logos" name="logos" class=" mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" style="width: 210px;">
                                             <option value="logo_loreal.png">LOGO LOREAL NEGRO</option>
-                                            <option value="logo_loreal.png">LOGO LOREAL BLANCO</option>
+                                            <option value="logo_loreal_white.png">LOGO LOREAL BLANCO</option>
                                            
                                         </select>
                                     </div>
@@ -385,7 +385,7 @@
 
         /* Logos */
         var logo1 = "{{asset('img/logo_loreal.png')}}";
-        var logo2 = "{{asset('img/logo_loreal.png')}}";
+        var logo2 = "{{asset('img/logo_loreal_white.png')}}";
 
         if(imageURL.startsWith("https://catalogodeproductos.promolife.lat/")){
             imageURL = imageURL.slice(41);
