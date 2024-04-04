@@ -77,6 +77,8 @@
 
                             $productName = isset($productData->name) ? $productData->name : 'Nombre no disponible';
                             $totalGeneral += intval($product->precio_total);
+
+                            $quoteTechnique = optional(\App\Models\QuoteTechniques::where('quotes_id', $quote->id)->latest()->first());
                         @endphp
                         
                         <tr class="border">
@@ -89,10 +91,12 @@
                                 @endif
                             </td>
                             <td class="text-center">{{$productName }}</td>
-                            <td class="text-center">{{isset($quote->quoteTechniques->technique)? $quote->quoteTechniques->technique : ''}}</td>
+                            <td class="text-center">{{isset($quoteTechnique->technique)? $quoteTechnique->technique : ''}}</td>
                             <td>
-                                <p><b>Material: </b>  {{isset($quote->quoteTechniques->material)? $quote->quoteTechniques->material: ''}} </p>
-                                <p><b>Tamaño: </b>  {{isset($quote->quoteTechniques->size)?  $quote->quoteTechniques->size: '' }} </p>
+                                
+                              
+                                <p><b>Material: </b>  {{isset($quoteTechnique->material)? $quoteTechnique->material: ''}} </p>
+                                <p><b>Tamaño: </b>  {{isset($quoteTechnique->size)?  $quoteTechnique->size: '' }} </p>
                               </td>
                             <td class="text-center">{{ $product->dias_entrega}} dias</td>
                             <td class="text-center"> {{ $product->cantidad}} piezas</td>

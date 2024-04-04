@@ -497,6 +497,7 @@ class CotizadorController extends Controller
         $quote = Quote::where('id', $request->id )->get()->first();
         $quote_products = QuoteProducts::where('id', $request->id )->get()->first();
         $quote_techniques = QuoteTechniques::where('id', $request->id )->get()->first();
+    
         $quote_updates = QuoteUpdate::where('id', $request->id )->get()->first();
 /*         $quote_update_product = QuoteProducts::where('id', $request->id )->get()->first();
  */
@@ -557,33 +558,21 @@ class CotizadorController extends Controller
 
         if($quote_techniques){
             $createQuoteTechniques = new ShoppingTechnique();
-            $createQuoteTechniques->quotes_id = $createQuote->id;
-            $createQuoteTechniques->material =  $quote_techniques->material->material;
-            $createQuoteTechniques->technique = $quote_techniques->technique->technique;
-            $createQuoteTechniques->size = $quote_techniques->size->size;
+            $createQuoteTechniques->shopping_id = $createQuote->id;
+            $createQuoteTechniques->material =  $quote_techniques->material;
+            $createQuoteTechniques->technique = $quote_techniques->technique;
+            $createQuoteTechniques->size = $quote_techniques->size;
             $createQuoteTechniques->save();
         }
 
-        $recipients = [
-            'daniel@trademarket.com.mx',
-            'ugamboa@medix.com.mx',
-            'jsantos@medix.com.mx',
-        ];
 
         $date = Carbon::now()->format("d/m/Y");
 
-    
-        Notification::route('mail', [
-            'daniel@trademarket.com.mx',
-            'ugamboa@medix.com.mx',
-            'jsantos@medix.com.mx',
-        ])->notify(new SendEmailCotizationNotification($date, $quote));
-
-        $user = auth()->user(); 
+       /*  $user = auth()->user(); 
         $userEmail = $user->email; 
 
         Notification::route('mail', $userEmail)
-            ->notify(new SendEmailCotizationNotification($date, $quote));
+            ->notify(new SendEmailCotizationNotification($date, $quote)); */
             
         return redirect()->back()->with('message', 'Este es tu mensaje de sesión.');
 

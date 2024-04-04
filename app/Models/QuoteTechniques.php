@@ -9,4 +9,11 @@ class QuoteTechniques extends Model
 {
     use HasFactory;
     public $table = 'quote_techniques';
+
+    protected $fillable = [
+        'quotes_id',
+        'material',
+        'technique',
+        'size',
+    ];
 }
