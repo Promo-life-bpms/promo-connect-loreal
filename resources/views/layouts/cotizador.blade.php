@@ -12,7 +12,7 @@
     <title>
         @hasSection('title')
             @yield('title') |
-        @endif {{ config('app.name', 'Loreal') }}
+        @endif Loreal
     </title>
 
     <!-- Fonts -->
